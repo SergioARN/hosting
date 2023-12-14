@@ -1,0 +1,42 @@
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="Programa.js"></script>
+    <title> Práctica Sergio Akira Rojas Nakamura</title>
+  </head>
+
+  <body>
+    <a-scene>
+      <a-assets>
+        <a-asset-item id="gun2" src="Ray Gun.obj"></a-asset-item>
+        <img src="hermosas-estrellas-brillantes-cielo-nocturno_181624-622.jpg" id="Sky">
+        <a-asset-item id="ufo" src="uploads_files_843749_ufo.obj/ufo.obj"></a-asset-item>
+      </a-assets>
+
+      <a-entity class="orbit" position="0 30 0" rotation="0 -40 0"
+            animation="property: rotation; to: 0 -360 0; loop: true; dur: 57000; easing: linear">
+      </a-entity>
+
+      <a-entity class="orbit" position="0 10 0" rotation="0 0 0"
+            animation="property: rotation; to: 0 360 0; loop: true; dur: 53000; easing: linear">
+      </a-entity>
+
+      <a-entity class="orbit" position="0 60 0" rotation="0 180 0"
+            animation="property: rotation; to: 0 -360 0; loop: true; dur: 55000; easing: linear">
+      </a-entity>
+
+      <a-entity camera look-controls>
+        <a-obj-model src="#gun2" rotation="-90 180 90" position="1 -2.125 -1.25" scale="0.01 0.01 0.01" 
+        material="src: luigis_mansion_x_resident_evil/textures/grass_tile_baseColor.png; metalness: 0.75"></a-obj-model>
+        <a-text value="0 Ovnis destruidos" color="lightblue" position="0 -0.1 -1" width="1" align="center"></a-text>
+        <a-entity cursor="fuse: false; fuseTimeout: 100" position="0 0 -1" raycaster="objects: .Ovni"
+        geometry="primitive: ring; radiusInner: 0.015; radiusOuter: 0.02" material="color: lightblue;shader: flat"></a-entity>
+      </a-entity>
+
+      <a-circle position="0 -3 -4" rotation="-90 0 0" radius="200"
+      material="src: luigis_mansion_x_resident_evil/textures/floor_tiles_baseColor.png" repeat="200 200"></a-circle>
+      <a-sky src="#Sky"></a-sky>
+
+    </a-scene>
+  </body>
+</html>
